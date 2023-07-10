@@ -11,8 +11,18 @@ class LocationAdapter(private val invoice: List<Location>, private val onClick: 
     inner class InvoiceViewHolder(private val binding: ItemLocationBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Location) {
-            binding.btnDetail.setOnClickListener {
-                onClick.invoke(item.installationNumber)
+            // TODO  ADD DATA BINDING
+            with(binding) {
+                btnDetail.setOnClickListener {
+                    onClick.invoke(item.installationNumber)
+
+                }
+
+                txtAccountNumber.text = item.contractAccountNumber
+                txtLocation.text = item.company
+                txtAddressInput.text = item.address
+                txtCurrentDebt.text = item.amount
+                txtInstallationNumber.text = item.installationNumber
 
             }
         }
