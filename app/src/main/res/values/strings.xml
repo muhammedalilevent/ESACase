@@ -8,4 +8,10 @@
     <string name="titleAccountNumber">Sözleşme Hesap Numarası:</string>
     <string name="titleCurrentDebt">Güncel Borç:</string>
     <string name="titleBtnDetail">Görüntüle</string>
+    <string name="titleDetailPage">KİŞİSEL BİLGİLER</string>
+    <string name="title_TCKN">T.C. Kimlik Numaranız</string>
+    <string name="titleNameSurname">Adınız ve Soyadınız</string>
+    <string name="titleEmail">E-posta Adresiniz</string>
+    <string name="titlePhoneNumber">Cep Telefonu Numaranız</string>
+    <string name="helperTextTCKN">XXXXXXXXXXX</string>
 </resources>
