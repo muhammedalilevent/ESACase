@@ -19,6 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/mekan_ismi"
+            android:textStyle="bold"
             android:padding="@dimen/_10dp"
             android:textSize="@dimen/_15sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -34,26 +35,38 @@
             app:layout_constraintTop_toBottomOf="@+id/txtLocation"
             tools:layout_editor_absoluteX="@dimen/_10dp" />
 
-        <TextView
-            android:id="@+id/txtAddressTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10dp"
-            android:textSize="@dimen/_15sp"
-            android:text="@string/titleAddress"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider1" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/txtAddressInput"
+        <LinearLayout
+            android:id="@+id/addressSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10dp"
-            android:ellipsize="end"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
+
+            android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAddressTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/divider1">
+
+            <TextView
+                android:id="@+id/txtAddressTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="2"
+                android:text="@string/titleAddress"
+                android:textSize="@dimen/_15sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtAddressInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:minLines="2"
+                android:breakStrategy="balanced"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="3"
+                android:inputType="text|textMultiLine"
+                android:text="@string/dummyAddress" />
+
+        </LinearLayout>
+
 
         <View
             android:id="@+id/divider2"
@@ -64,17 +77,65 @@
             android:padding="@dimen/_10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAddressInput" />
+            app:layout_constraintTop_toBottomOf="@+id/addressSection" />
+
+        <LinearLayout
+            android:id="@+id/installationSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divider2">
+
+            <TextView
+                android:id="@+id/titleInstallationNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:text="@string/titleInstallationNumber"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/txtInstallationNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="1"
+                android:text="@string/dummyIN"
+                android:textAlignment="textEnd"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/accountSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/installationSection">
 
         <TextView
-            android:id="@+id/txtInstallationNumber"
+            android:id="@+id/titleAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10dp"
+            android:layout_weight="3"
+            android:textStyle="bold"
+            android:text="@string/titleAccountNumber"
             android:textSize="@dimen/_15sp"
-            android:text="@string/titleInstallationNumber"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <TextView
@@ -82,11 +143,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_10dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:text="@string/dummyAN"
+            android:textAlignment="textEnd"
             android:textSize="@dimen/_15sp"
-            android:text="@string/titleAccountNumber"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtInstallationNumber" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        </LinearLayout>
+
 
         <View
             android:id="@+id/divider3"
@@ -97,18 +163,45 @@
             android:padding="@dimen/_10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtAccountNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/accountSection" />
 
-        <TextView
-            android:id="@+id/txtCurrentDebt"
+        <LinearLayout
+            android:id="@+id/debtSection"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/_10dp"
-            android:text="@string/titleCurrentDebt"
-            android:textSize="@dimen/_15sp"
-            app:layout_constraintStart_toStartOf="parent"
+            android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accountSection">
+
+            <TextView
+                android:id="@+id/titleCurrentDebt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_weight="3"
+                android:textStyle="bold"
+                android:text="@string/titleCurrentDebt"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+            <TextView
+                android:id="@+id/txtCurrentDebt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_10dp"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:text="@string/dummyDebt"
+                android:textAlignment="textEnd"
+                android:textSize="@dimen/_15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+        </LinearLayout>
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_detail"
@@ -124,7 +217,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtCurrentDebt" />
+            app:layout_constraintTop_toBottomOf="@+id/debtSection" />
+
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -21,7 +21,7 @@ class LocationAdapter(private val invoice: List<Location>, private val onClick: 
                 txtAccountNumber.text = item.contractAccountNumber
                 txtLocation.text = item.company
                 txtAddressInput.text = item.address
-                txtCurrentDebt.text = item.amount
+                txtCurrentDebt.text = "₺ " + item.amount
                 txtInstallationNumber.text = item.installationNumber
 
             }

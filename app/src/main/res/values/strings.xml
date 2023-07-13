@@ -3,7 +3,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mekan_ismi">Mekan İsmi</string>
-    <string name="titleAddress" >Adres</string>
+    <string name="titleAddress" >Adres:</string>
     <string name="titleInstallationNumber">Tesisat Numarası:</string>
     <string name="titleAccountNumber">Sözleşme Hesap Numarası:</string>
     <string name="titleCurrentDebt">Güncel Borç:</string>
@@ -14,4 +14,9 @@
     <string name="titleEmail">E-posta Adresiniz</string>
     <string name="titlePhoneNumber">Cep Telefonu Numaranız</string>
     <string name="helperTextTCKN">XXXXXXXXXXX</string>
+    <string name="dummyAddress">İSTASYON MAH. MEDRESE SK. NO:6/9 MERKEZ TUZLA İSTANBUL</string>
+    <string name="dummyIN">400XXXXXXX</string>
+    <string name="dummyAN">123XXXXXXXX</string>
+    <string name="debtPattern">₺ %d</string>
+    <string name="dummyDebt">₺ 112,90</string>
 </resources>
