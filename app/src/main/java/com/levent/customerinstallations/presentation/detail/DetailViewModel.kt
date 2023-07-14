@@ -9,4 +9,6 @@ import javax.inject.Inject
 @HiltViewModel
 class DetailViewModel @Inject constructor(savedStateHandle: SavedStateHandle) : ViewModel() {
     val userInvoices = savedStateHandle.get<UserInvoices>("invoice")
+
+
 }

@@ -21,4 +21,5 @@
     <string name="dummyDebt">₺ 112,90</string>
     <string name="helperTextEmail">osman.kudu@enerjisa.com.tr</string>
     <string name="helperTextPhone">555 444 33 22</string>
+    <string name="dummyDetailDept">Seçili sözleşme hesabınıza ait X  adet ödenmemiş fatura  bulunmaktadır.</string>
 </resources>

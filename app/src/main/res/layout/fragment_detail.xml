@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,161 +7,444 @@
     tools:context=".presentation.detail.DetailFragment">
 
 
-    <TextView
-        android:id="@+id/tvTitleDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/titleDetailPage"
-        android:layout_margin="10dp"
-        android:textSize="@dimen/_15sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilNameSurname"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/titleNameSurname"
-        app:helperText="Osman KUDU"
+       <TextView
+           android:id="@+id/tvTitleDetail"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/titleDetailPage"
+           android:layout_margin="10dp"
+           android:textSize="@dimen/_15sp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
 
-        android:layout_marginHorizontal="@dimen/_10dp"
-        android:layout_marginTop="@dimen/_10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tvTitleDetail"
-        app:layout_constraintTop_toBottomOf="@id/tvTitleDetail">
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/tilNameSurname"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/titleNameSurname"
+           app:helperText="Osman KUDU"
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietNameSurname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+           android:layout_marginHorizontal="@dimen/_10dp"
+           android:layout_marginTop="@dimen/_10dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@id/tvTitleDetail"
+           app:layout_constraintTop_toBottomOf="@id/tvTitleDetail">
 
-    </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/tietNameSurname"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilTCKN"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/title_TCKN"
-        app:helperText="@string/helperTextTCKN"
-        app:counterEnabled="true"
-        app:counterMaxLength="11"
-        android:layout_marginHorizontal="@dimen/_10dp"
-        android:layout_marginTop="@dimen/_10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tilNameSurname"
-        app:layout_constraintTop_toBottomOf="@id/tilNameSurname">
+       </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietTCKN"
-            android:maxLength="11"
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/tilTCKN"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/title_TCKN"
+           app:helperText="@string/helperTextTCKN"
+           app:counterEnabled="true"
+           app:counterMaxLength="11"
+           android:layout_marginHorizontal="@dimen/_10dp"
+           android:layout_marginTop="@dimen/_10dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@id/tilNameSurname"
+           app:layout_constraintTop_toBottomOf="@id/tilNameSurname">
 
-    </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/tietTCKN"
+               android:maxLength="11"
+               android:inputType="number"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/titleEmail"
-        app:helperText="@string/helperTextEmail"
-        android:layout_marginHorizontal="@dimen/_10dp"
-        android:layout_marginTop="@dimen/_10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tilTCKN"
-        app:layout_constraintTop_toBottomOf="@id/tilTCKN">
+       </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietEmail"
-            android:inputType="textEmailAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/tilEmail"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/titleEmail"
+           app:helperText="@string/helperTextEmail"
+           android:layout_marginHorizontal="@dimen/_10dp"
+           android:layout_marginTop="@dimen/_10dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@id/tilTCKN"
+           app:layout_constraintTop_toBottomOf="@id/tilTCKN">
 
-    </com.google.android.material.textfield.TextInputLayout>
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/tietEmail"
+               android:inputType="textEmailAddress"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+
+       </com.google.android.material.textfield.TextInputLayout>
 
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilPhoneNumber"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/titlePhoneNumber"
-        app:helperText="(555) 444 33 22"
-        android:layout_marginHorizontal="@dimen/_10dp"
-        android:layout_marginTop="@dimen/_10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/tilEmail"
-        app:layout_constraintTop_toBottomOf="@id/tilEmail">
+       <com.google.android.material.textfield.TextInputLayout
+           android:id="@+id/tilPhoneNumber"
+           style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/titlePhoneNumber"
+           app:helperText="(555) 444 33 22"
+           android:layout_marginHorizontal="@dimen/_10dp"
+           android:layout_marginTop="@dimen/_10dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="@id/tilEmail"
+           app:layout_constraintTop_toBottomOf="@id/tilEmail">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tietPhoneNumber"
-            android:inputType="phone"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+           <com.google.android.material.textfield.TextInputEditText
+               android:id="@+id/tietPhoneNumber"
+               android:inputType="phone"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
 
-    </com.google.android.material.textfield.TextInputLayout>
+       </com.google.android.material.textfield.TextInputLayout>
 
-    <TableLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:stretchColumns="4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tilPhoneNumber">
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/billSection"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_margin="@dimen/_10dp"
+           android:background="@drawable/border"
+           app:layout_constraintEnd_toEndOf="@+id/tilPhoneNumber"
+           app:layout_constraintStart_toStartOf="@+id/tilPhoneNumber"
+           app:layout_constraintTop_toBottomOf="@id/tilPhoneNumber">
 
-        <TableRow android:background="@drawable/border">
 
-            <TextView
-                android:padding="3dip"
-                android:text="Vade Tarihi" />
+           <TextView
+               android:id="@+id/txtLocation"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:padding="@dimen/_10dp"
+               android:text="@string/mekan_ismi"
+               android:textSize="@dimen/_15sp"
+               android:textStyle="bold"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="Ödenecek Tutar" />
-        </TableRow>
+           <View
+               android:id="@+id/divider1"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:layout_margin="@dimen/_10dp"
+               android:background="@android:color/darker_gray"
+               android:padding="@dimen/_10dp"
+               app:layout_constraintTop_toBottomOf="@+id/txtLocation"
+               tools:layout_editor_absoluteX="@dimen/_10dp" />
 
-        <TableRow
-            android:background="@drawable/border">
+           <LinearLayout
+               android:id="@+id/addressSection"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
+               android:orientation="vertical"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/divider1">
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
+               <TextView
+                   android:id="@+id/txtAddressTitle"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="2"
+                   android:text="@string/titleAddress"
+                   android:textSize="@dimen/_15sp"
+                   android:textStyle="bold" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
+               <androidx.appcompat.widget.AppCompatTextView
+                   android:id="@+id/txtAddressInput"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="3"
+                   android:breakStrategy="balanced"
+                   android:inputType="text|textMultiLine"
+                   android:minLines="2"
+                   android:text="@string/dummyAddress" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
-        </TableRow>
+           </LinearLayout>
 
-        <TableRow android:background="@drawable/border">
 
-            <TextView
-                android:padding="3dip"
-                android:text="333" />
+           <View
+               android:id="@+id/divider2"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:layout_margin="@dimen/_10dp"
+               android:background="@android:color/darker_gray"
+               android:padding="@dimen/_10dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/addressSection" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="333" />
+           <LinearLayout
+               android:id="@+id/installationSection"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/divider2">
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
+               <TextView
+                   android:id="@+id/titleInstallationNumber"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="1"
+                   android:text="@string/titleInstallationNumber"
+                   android:textSize="@dimen/_15sp"
+                   android:textStyle="bold"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-            <TextView
-                android:padding="3dip"
-                android:text="123" />
-        </TableRow>
-    </TableLayout>
+               <TextView
+                   android:id="@+id/txtInstallationNumber"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="1"
+                   android:text="@string/dummyIN"
+                   android:textAlignment="textEnd"
+                   android:textSize="@dimen/_15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+           </LinearLayout>
+
+           <LinearLayout
+               android:id="@+id/accountSection"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/installationSection">
+
+               <TextView
+                   android:id="@+id/titleAccount"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="3"
+                   android:text="@string/titleAccountNumber"
+                   android:textSize="@dimen/_15sp"
+                   android:textStyle="bold"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+               <TextView
+                   android:id="@+id/txtAccountNumber"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="2"
+                   android:text="@string/dummyAN"
+                   android:textAlignment="textEnd"
+                   android:textSize="@dimen/_15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
+           </LinearLayout>
+
+
+           <View
+               android:id="@+id/divider3"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:layout_margin="@dimen/_10dp"
+               android:background="@android:color/darker_gray"
+               android:padding="@dimen/_10dp"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/accountSection" />
+
+           <LinearLayout
+               android:id="@+id/debtSection"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/accountSection">
+
+               <TextView
+                   android:id="@+id/titleCurrentDebt"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="3"
+                   android:text="@string/titleCurrentDebt"
+                   android:textSize="@dimen/_15sp"
+                   android:textStyle="bold"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+               <TextView
+                   android:id="@+id/txtCurrentDebt"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_gravity="center"
+                   android:layout_margin="@dimen/_10dp"
+                   android:layout_weight="2"
+                   android:text="@string/dummyDebt"
+                   android:textAlignment="textEnd"
+                   android:textSize="@dimen/_15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toBottomOf="@+id/divider2" />
+           </LinearLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <com.google.android.material.card.MaterialCardView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           app:layout_constraintTop_toBottomOf="@id/billSection"
+           app:layout_constraintStart_toStartOf="@id/billSection"
+           app:layout_constraintEnd_toEndOf="@id/billSection"
+           android:layout_margin="@dimen/_10dp">
+
+           <androidx.constraintlayout.widget.ConstraintLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingEnd="@dimen/_10dp"
+               android:paddingBottom="@dimen/_10dp"
+               >
+
+               <ImageView
+                   android:id="@+id/imageView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="@dimen/_10dp"
+                   android:src="@drawable/ic_info"
+                   app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent" />
+
+
+               <TextView
+                   android:id="@+id/txtAllDept"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="2"
+                   android:paddingStart="15dp"
+                   android:text="@string/dummyDetailDept"
+                   android:textSize="15sp"
+                   android:textStyle="bold"
+                   app:layout_constraintEnd_toEndOf="parent"
+                   app:layout_constraintStart_toEndOf="@+id/imageView"
+                   app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+               <TextView
+                   android:id="@+id/textView"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:paddingStart="15dp"
+                   android:text="Toplam Borç:"
+                   android:textSize="15sp"
+                   android:textStyle="bold"
+                   app:layout_constraintStart_toStartOf="@+id/txtAllDept"
+                   app:layout_constraintTop_toBottomOf="@+id/txtAllDept" />
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:text="tl 10,54"
+                   android:textAlignment="textEnd"
+                   android:textSize="15sp"
+                   app:layout_constraintEnd_toEndOf="parent"
+
+                   app:layout_constraintTop_toTopOf="@+id/textView" />
+
+
+           </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+       </com.google.android.material.card.MaterialCardView>
+
+       <TableLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_margin="@dimen/_10dp"
+           android:stretchColumns="4"
+           android:visibility="gone"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@id/tilPhoneNumber">
+
+           <TableRow android:background="@drawable/border">
+
+               <TextView
+                   android:padding="3dip"
+                   android:text="Vade Tarihi" />
+
+               <TextView
+                   android:padding="3dip"
+
+                   android:text="Ödenecek Tutar" />
+           </TableRow>
+
+           <TableRow android:background="@drawable/border">
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+           </TableRow>
+
+           <TableRow android:background="@drawable/border">
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="333" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="333" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+
+               <TextView
+                   android:background="@drawable/border"
+                   android:padding="3dip"
+                   android:text="123" />
+           </TableRow>
+       </TableLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

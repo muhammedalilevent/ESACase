@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.levent.customerinstallations.R
 import com.levent.customerinstallations.common.viewBinding
+import com.levent.customerinstallations.data.model.Location
 import com.levent.customerinstallations.databinding.FragmentDetailBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,8 +21,18 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        fillUserInfo(viewModel.userInvoices?.list?.get(0))
         setUIContents()
 
+    }
+
+    private fun fillUserInfo(userInfo: Location?) {
+        with(binding) {
+            txtLocation.text = userInfo?.company
+            txtAddressInput.text = userInfo?.address
+            txtInstallationNumber.text = userInfo?.installationNumber
+            txtAccountNumber.text = userInfo?.contractAccountNumber
+        }
     }
 
     private fun setUIContents() {
