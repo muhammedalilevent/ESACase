@@ -68,7 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/titleEmail"
-        app:helperText="osman.kudu@enerjisa.com.tr"
+        app:helperText="@string/helperTextEmail"
         android:layout_marginHorizontal="@dimen/_10dp"
         android:layout_marginTop="@dimen/_10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,5 +104,64 @@
             android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:stretchColumns="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilPhoneNumber">
+
+        <TableRow android:background="@drawable/border">
+
+            <TextView
+                android:padding="3dip"
+                android:text="Vade Tarihi" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="Ödenecek Tutar" />
+        </TableRow>
+
+        <TableRow
+            android:background="@drawable/border">
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+        </TableRow>
+
+        <TableRow android:background="@drawable/border">
+
+            <TextView
+                android:padding="3dip"
+                android:text="333" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="333" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+
+            <TextView
+                android:padding="3dip"
+                android:text="123" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

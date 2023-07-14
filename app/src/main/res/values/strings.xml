@@ -19,4 +19,6 @@
     <string name="dummyAN">123XXXXXXXX</string>
     <string name="debtPattern">₺ %d</string>
     <string name="dummyDebt">₺ 112,90</string>
+    <string name="helperTextEmail">osman.kudu@enerjisa.com.tr</string>
+    <string name="helperTextPhone">555 444 33 22</string>
 </resources>

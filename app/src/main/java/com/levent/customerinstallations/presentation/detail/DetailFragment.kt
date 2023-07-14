@@ -40,7 +40,7 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         with(binding.tilTCKN) {
             this.editText?.toString()
             this.editText?.doOnTextChanged { inputText, _, _, _ ->
-                if (inputText?.length!! == 11) {
+                if (!inputText.isNullOrBlank()) {
                     if (isTCKNCorrect(inputText.toString())) {
                         this.helperText = "TC Kimlik Doğrulaması Başarılı"
 
@@ -78,7 +78,34 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         with(binding.tilEmail) {
             this.editText?.toString()
             this.editText?.doOnTextChanged { inputText, _, _, _ ->
-                println("45ss tc $inputText")
+                if (!inputText.isNullOrBlank()) {
+                    if (isEmailValid(inputText.toString())) {
+                        this.helperText = "Email doğrulaması başarılı"
+
+                        this.setHelperTextColor(
+                            makeColorCSL(
+                                ContextCompat.getColor(
+                                    context,
+                                    R.color.colorVerified
+                                )
+                            )
+                        )
+                        this.boxStrokeColor = ContextCompat.getColor(
+                            context,
+                            R.color.colorVerified
+                        )
+                        this.hintTextColor = makeColorCSL(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.colorVerified
+                            )
+                        )
+                    } else {
+                        this.error = "Email doğrulaması başarısız"
+                    }
+                } else {
+                    resetEmailInputState()
+                }
             }
         }
 
@@ -91,7 +118,34 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         with(binding.tilPhoneNumber) {
             this.editText?.toString()
             this.editText?.doOnTextChanged { inputText, _, _, _ ->
-                println("45ss tc $inputText")
+                if (!inputText.isNullOrBlank()) {
+                    if (isPhoneValid(inputText.toString())) {
+                        this.helperText = "Telefon Numarası Doğrulaması başarılı"
+
+                        this.setHelperTextColor(
+                            makeColorCSL(
+                                ContextCompat.getColor(
+                                    context,
+                                    R.color.colorVerified
+                                )
+                            )
+                        )
+                        this.boxStrokeColor = ContextCompat.getColor(
+                            context,
+                            R.color.colorVerified
+                        )
+                        this.hintTextColor = makeColorCSL(
+                            ContextCompat.getColor(
+                                context,
+                                R.color.colorVerified
+                            )
+                        )
+                    } else {
+                        this.error = "Telefon Numarası Doğrulaması başarısız"
+                    }
+                } else {
+                    resetPhoneInputState()
+                }
             }
         }
 
@@ -127,8 +181,67 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         }
     }
 
+    private fun resetPhoneInputState() {
+        with(binding.tilPhoneNumber) {
+            this.hintTextColor = makeColorCSL(
+                ContextCompat.getColor(
+                    context,
+                    R.color.colorPrimary
+                )
+            )
+            this.boxStrokeColor = ContextCompat.getColor(
+                context,
+                R.color.colorPrimary
+            )
+            this.setHelperTextColor(
+                makeColorCSL(
+                    ContextCompat.getColor(
+                        context,
+                        com.google.android.material.R.color.mtrl_indicator_text_color
+                    )
+                )
+            )
+            this.helperText = getString(R.string.helperTextPhone)
+        }
+    }
+
+    private fun resetEmailInputState() {
+        with(binding.tilEmail) {
+            this.hintTextColor = makeColorCSL(
+                ContextCompat.getColor(
+                    context,
+                    R.color.colorPrimary
+                )
+            )
+            this.boxStrokeColor = ContextCompat.getColor(
+                context,
+                R.color.colorPrimary
+            )
+            this.setHelperTextColor(
+                makeColorCSL(
+                    ContextCompat.getColor(
+                        context,
+                        com.google.android.material.R.color.mtrl_indicator_text_color
+                    )
+                )
+            )
+            this.helperText = getString(R.string.helperTextEmail)
+        }
+    }
+
     private fun makeColorCSL(colorHashCode: Int): ColorStateList {
         return ColorStateList.valueOf(colorHashCode)
+    }
+
+    fun isEmailValid(email: String): Boolean {
+        val EMAIL_REGEX = "^[A-Za-z](.*)([@]{1})(.{1,})(\\.)(.{1,})";
+        return EMAIL_REGEX.toRegex().matches(email);
+    }
+
+    fun isPhoneValid(phone: String): Boolean {
+        val PHONE_REGEX =
+            "^\\+?\\(?[0-9]{1,3}\\)? ?-?[0-9]{1,3} ?-?[0-9]{3,5} ?-?[0-9]{4}( ?-?[0-9]{3})?"
+        return PHONE_REGEX.toRegex().matches("90$phone")
     }
 
     private fun isTCKNCorrect(id: String?): Boolean {
